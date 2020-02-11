@@ -1,0 +1,56 @@
+<div class="container">
+	<form method="post">
+		<div>
+			{{#if state}} {{state}} {{else}} <br> {{/if}}
+		</div>
+
+		<div class="form-group row" >
+			<h3 class="col-sm-10 ">Modify Existing Pokemon Move</h3>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Move</label>
+			<div class="col-sm-5">
+				<select name="MoveID">
+					<option value="None">---</option>
+					{{#each move}}
+						<option value="{{this.ID}}">{{this.Name}}</option>
+					{{/each}}
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label  class="col-sm-2 col-form-label">Name</label>
+			<div class="col-sm-5">
+				<input type="text" name="Name" class="form-control" maxlength="20" required>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label  class="col-sm-2 col-form-label">Attack Power</label>
+			<div class="col-sm-5">
+				<input type="number" name="AttackPower" class="form-control" required>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label  class="col-sm-2 col-form-label">PP</label>
+			<div class="col-sm-5">
+				<input type="number" name="PP" class="form-control" min="0" max="100" required>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label  class="col-sm-2 col-form-label">Description</label>
+			<div class="col-sm-5">
+				<input type="text" name="Description" class="form-control" maxlength="256" required>
+			</div>
+		</div>
+
+	<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+	<a href="/" id="cancel" name="cancel" class="btn btn-default" value="cancel">Cancel</a>
+
+	</form>
+</div>
+

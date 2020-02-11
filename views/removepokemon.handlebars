@@ -1,0 +1,26 @@
+<div class="container">
+	<form method="post">
+		<div>
+			{{#if state}} {{state}} {{else}} <br> {{/if}}
+		</div>
+
+		<div class="form-group row" >
+			<h3 class="col-sm-10">Delete Information for a Pokemon</h3>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Pokemon</label>
+			<div class="col-sm-5">
+				<select name="PokemonID">
+					<option value="None">---</option>
+					{{#each pokemon}}
+						<option value="{{this.ID}}">{{this.SpeciesName}}</option>
+					{{/each}}
+				</select>
+			</div>
+		</div>	
+
+		<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+		<a href="/" id="cancel" name="cancel" class="btn btn-default" value="cancel">Cancel</a>
+	</form>
+</div>

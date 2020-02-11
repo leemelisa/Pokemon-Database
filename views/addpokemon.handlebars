@@ -1,0 +1,106 @@
+<div class="container">
+
+	<form method="post">
+		<div>
+			{{#if state}} {{state}} {{else}} <br> {{/if}}
+		</div>
+
+
+			<div class="form-group row" >
+				<h3 class="col-sm-10 ">Enter Information for a New Pokemon</h3>
+			</div>
+
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label">Species Name</label>
+				<div class="col-sm-5">
+					<input type="text" name="SpeciesName" class="form-control" maxlength="20" required>
+				</div>
+			</div>
+
+			<div class="form-group row" >
+				<label class="col-sm-2 col-form-label">Pokemon Number</label>
+				<div class="col-sm-5">
+					<input type="number" name="PokemonNumber" class="form-control" min="1" required>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label">Nickname</label>
+				<div class="col-sm-5">
+					<input type="text" name="Nickname" class="form-control"  maxlength="20">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label">Level</label>
+				
+				<div class="col-sm-5">
+					<input type="number" name="Level" class="form-control" min="1" required>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label">Gender</label>
+
+				<div class="form-check checkbox-inline">
+					<input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="0" required>
+					<label class="form-check-label">Male</label>
+				</div>
+
+				<div class="form-check checkbox-inline">
+					<input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="1">
+					<label class="form-check-label">Female</label>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label  class="col-sm-2 col-form-label">Trainer ID</label>
+				
+				<div class="col-sm-5">
+					<select name="TrainerSelect" class="form-control">	
+						<option value="None">-- None --</option>
+						{{#each trainerlist}}
+							<option value="{{this.ID}}">{{this.Name}}</option>
+						{{/each}}
+					</select>
+				</div>			
+			</div>
+			
+			<br>
+			<div>
+				<label  class="col-form-label">Add up to 4 moves for your Pokemon. (Only existing moves are shown)</label><br>
+				<select name="move1">
+					{{#each pmoves}}
+						<option value="{{this.ID}}">{{this.Name}}</option>
+					{{/each}}
+				</select>
+				
+				<select name="move2">
+					<option value="None">-- None --</option>
+					{{#each pmoves}}
+						<option value="{{this.ID}}">{{this.Name}}</option>
+					{{/each}}
+				</select>
+				
+				<select name="move3">
+					<option value="None">-- None --</option>
+					{{#each pmoves}}
+						<option value="{{this.ID}}">{{this.Name}}</option>
+					{{/each}}
+				</select>
+				
+				<select name="move4">
+					<option value="None">-- None --</option>
+					{{#each pmoves}}
+						<option value="{{this.ID}}">{{this.Name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			
+			<br>
+			
+			<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+			<a href="/" id="cancel" name="cancel" class="btn btn-default" value="cancel">Cancel</a>
+	</form>
+
+</div>

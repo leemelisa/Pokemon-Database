@@ -1,0 +1,39 @@
+<div class="container">
+  <br>
+	
+  <p>
+    <h3><center>Trainers in Your Database</center></h3>
+	
+    <table class="table">
+      <thead>
+        <tr>
+          {{#each sqlCol}}
+		<th scope="col">{{this.name}}</th>	
+          {{/each}}
+        </tr>
+      </thead>
+
+       <tbody>
+		 {{#each sqlResult}}
+		   <tr>
+			<th scope="row">{{this.ID}}</a></th>
+			<td><a href="?key=Name&value='{{this.Name}}'">{{this.Name}}</a></td>
+			<td><a href="?key=Gender&value={{this.Gender}}">{{this.Gender}}</a></td>
+			<td><a href="?key=Money&value={{this.Money}}">{{this.Money}}</a></td>
+		   </tr>    	
+
+		 {{/each}}
+        </tbody>
+	</table>
+	
+	{{#if filter}}
+		<a href="/browsetrainer" class="btn btn-primary">Reset filter</a>
+	{{/if}}
+	
+	<em>*Note: Gender 1 = Male, and 2 = Female</em>
+			
+  </p>
+
+</div>
+
+
