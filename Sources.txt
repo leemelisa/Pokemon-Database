@@ -1,0 +1,5 @@
+Sources used
+
+-Incrementing number in each loop: https://stackoverflow.com/questions/28007899/handlebars-template-best-way-to-add-incrementing-variable
+-Obtaining insertId: https://github.com/mysqljs/mysql#getting-the-id-of-an-inserted-row
+-Various HTML/CSS/Node JS: https://www.w3schools.com/
